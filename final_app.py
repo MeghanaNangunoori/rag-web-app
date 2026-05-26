@@ -1,15 +1,14 @@
 import streamlit as st
 import os
-from dotenv import load_dotenv
 from groq import Groq
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import chromadb
 import tempfile
 
-load_dotenv()
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 chroma_client = chromadb.Client()
 
 st.title("Document Q&A with AI")
