@@ -8,7 +8,7 @@ import tempfile
 
 
 
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+client = Groq(api_key=str(st.secrets["GROQ_API_KEY"]))
 chroma_client = chromadb.Client()
 
 st.title("Document Q&A with AI")
